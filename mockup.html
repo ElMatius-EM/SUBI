@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUBI — UI Mockup</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="mockup.css">
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">SUBI</div>
+        <div class="nav-tabs">
+            <button class="tab-btn active" onclick="showSection('passenger')">Pasajero</button>
+            <button class="tab-btn" onclick="showSection('driver')">Conductor</button>
+            <button class="tab-btn" onclick="showSection('admin')">Admin</button>
+        </div>
+        <div class="badge">UI Mockup</div>
+    </nav>
+
+    <!-- PASAJERO -->
+    <div id="passenger-section" class="section active">
+        <div class="hero">
+            <div class="hero-eyebrow">App del Pasajero</div>
+            <h1>Pedí tu viaje<br><em>en segundos</em></h1>
+            <p>Interfaz principal donde el usuario solicita un viaje, ve al conductor acercarse y confirma el destino.
+            </p>
+        </div>
+
+        <div class="phones-wrap">
+
+            <!-- PANTALLA 1: PEDIR VIAJE -->
+            <div class="phone-block">
+                <div class="phone-label">
+                    <div class="dot"></div>Buscar viaje
+                </div>
+                <div class="phone">
+                    <div class="screen">
+                        <div class="status-bar">
+                            <span class="status-time">9:41</span>
+                            <div class="status-icons"><span>●●●</span><span>WiFi</span><span>🔋</span></div>
+                        </div>
+                        <div class="map-area">
+                            <!-- SVG MAP MOCK -->
+                            <svg class="map-svg" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
+                                <rect fill="#0d1117" width="320" height="320" />
+                                <!-- calles -->
+                                <line x1="0" y1="80" x2="320" y2="80" stroke="#1e2030" stroke-width="12" />
+                                <line x1="0" y1="160" x2="320" y2="160" stroke="#1e2030" stroke-width="18" />
+                                <line x1="0" y1="240" x2="320" y2="240" stroke="#1e2030" stroke-width="12" />
+                                <line x1="80" y1="0" x2="80" y2="320" stroke="#1e2030" stroke-width="12" />
+                                <line x1="160" y1="0" x2="160" y2="320" stroke="#1e2030" stroke-width="18" />
+                                <line x1="240" y1="0" x2="240" y2="320" stroke="#1e2030" stroke-width="12" />
+                                <!-- manzanas -->
+                                <rect x="88" y="88" width="64" height="64" fill="#121620" rx="4" />
+                                <rect x="168" y="88" width="64" height="64" fill="#121620" rx="4" />
+                                <rect x="88" y="168" width="64" height="64" fill="#121620" rx="4" />
+                                <rect x="168" y="168" width="64" height="64" fill="#121620" rx="4" />
+                                <rect x="8" y="8" width="64" height="64" fill="#121620" rx="4" />
+                                <rect x="248" y="8" width="64" height="64" fill="#121620" rx="4" />
+                                <rect x="8" y="248" width="64" height="64" fill="#121620" rx="4" />
+                                <rect x="248" y="248" width="64" height="64" fill="#121620" rx="4" />
+                                <!-- ruta activa -->
+                                <polyline points="80,200 80,160 160,160 160,100" stroke="#00c896" stroke-width="3"
+                                    fill="none" stroke-dasharray="6,4" opacity="0.7" />
+                            </svg>
+                            <!-- pines -->
+                            <div class="map-pin" style="left:50%;top:58%;">
+                                <div class="pin-circle green"><span class="pin-icon">📍</span></div>
+                            </div>
+                            <div class="map-pin" style="left:50%;top:32%;">
+                                <div class="pin-circle blue"><span class="pin-icon">🏁</span></div>
+                            </div>
+                            <!-- auto -->
+                            <div class="car-dot"
+                                style="position:absolute;left:22%;top:55%;transform:translate(-50%,-50%);">🚗</div>
+                        </div>
+                        <div class="bottom-card">
+                            <div class="drag-handle"></div>
+                            <p class="section-title">¿A dónde vas?</p>
+                            <div class="input-row">
+                                <div class="input-field">
+                                    <div class="input-dot green"></div>
+                                    <span class="input-text filled">Tu ubicación actual</span>
+                                </div>
+                                <div class="input-connector"></div>
+                                <div class="input-field">
+                                    <div class="input-dot blue"></div>
+                                    <span class="input-text">Ingresá el destino...</span>
+                                </div>
+                            </div>
+                            <button class="btn-primary">Buscar viaje</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PANTALLA 2: CONDUCTOR EN CAMINO -->
+            <div class="phone-block">
+                <div class="phone-label">
+                    <div class="dot blue"></div>Conductor en camino
+                </div>
+                <div class="phone">
+                    <div class="screen">
+                        <div class="status-bar">
+                            <span class="status-time">9:45</span>
+                            <div class="status-icons"><span>●●●</span><span>WiFi</span><span>🔋</span></div>
+                        </div>
+                        <div class="map-area">
+                            <svg class="map-svg" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
+                                <rect fill="#0d1117" width="320" height="320" />
+                                <line x1="0" y1="80" x2="320" y2="80" stroke="#1e2030" stroke-width="12" />
+                                <line x1="0" y1="160" x2="320" y2="160" stroke="#1e2030" stroke-width="18" />
+                                <line x1="0" y1="240" x2="320" y2="240" stroke="#1e2030" stroke-width="12" />
+                                <line x1="80" y1="0" x2="80" y2="320" stroke="#1e2030" stroke-width="12" />
+                                <line x1="160" y1="0" x2="160" y2="320" stroke="#1e2030" stroke-width="18" />
+                                <line x1="240" y1="0" x2="240" y2="320" stroke="#1e2030" stroke-width="12" />
+                                <rect x="88" y="88" width="64" height="64" fill="#121620" rx="4" />
+                                <rect x="168" y="88" width="64" height="64" fill="#121620" rx="4" />
+                                <rect x="88" y="168" width="64" height="64" fill="#121620" rx="4" />
+                                <rect x="168" y="168" width="64" height="64" fill="#121620" rx="4" />
+                                <polyline points="120,200 80,200 80,160 120,160" stroke="#0088ff" stroke-width="3"
+                                    fill="none" stroke-dasharray="6,4" opacity="0.8" />
+                            </svg>
+                            <div class="map-pin" style="left:38%;top:55%;">
+                                <div class="pin-circle green"><span class="pin-icon">📍</span></div>
+                            </div>
+                            <div class="car-dot"
+                                style="position:absolute;left:25%;top:50%;transform:translate(-50%,-50%);">🚕</div>
+                        </div>
+                        <div class="bottom-card">
+                            <div class="drag-handle"></div>
+                            <div class="driver-card">
+                                <div class="driver-avatar">👨</div>
+                                <div class="driver-info">
+                                    <div class="name">Carlos R.</div>
+                                    <div class="sub">
+                                        <span class="stars">★★★★★</span>
+                                        <span>4.9 · Toyota Corolla</span>
+                                    </div>
+                                    <div class="sub" style="margin-top:4px;">
+                                        <span
+                                            style="font-size:0.7rem;background:rgba(0,200,150,0.1);color:var(--accent);padding:2px 6px;border-radius:4px;">ABC
+                                            123</span>
+                                    </div>
+                                </div>
+                                <div class="driver-eta">
+                                    <div class="mins">3'</div>
+                                    <div class="label">llegada</div>
+                                </div>
+                            </div>
+                            <div class="trip-card">
+                                <div class="trip-card-header">
+                                    <span class="title">Resumen del viaje</span>
+                                    <span class="price">$1.850</span>
+                                </div>
+                                <div class="trip-card-body">
+                                    <span>~4.2 km</span>
+                                    <span>~12 min</span>
+                                    <span class="trip-chip">Efectivo</span>
+                                </div>
+                            </div>
+                            <button class="btn-warn">Cancelar viaje</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- CONDUCTOR -->
+    <div id="driver-section" class="section">
+        <div class="hero">
+            <div class="hero-eyebrow">App del Conductor</div>
+            <h1>Gestioná tus<br><em>viajes del día</em></h1>
+            <p>El conductor activa su disponibilidad, recibe solicitudes y acepta o rechaza viajes en tiempo real.</p>
+        </div>
+
+        <div class="phones-wrap">
+
+            <!-- PANTALLA 1: DISPONIBLE -->
+            <div class="phone-block">
+                <div class="phone-label">
+                    <div class="dot"></div>En línea
+                </div>
+                <div class="phone">
+                    <div class="screen">
+                        <div class="status-bar">
+                            <span class="status-time">14:22</span>
+                            <div class="status-icons"><span>●●●</span><span>WiFi</span><span>🔋</span></div>
+                        </div>
+                        <div class="map-area">
+                            <svg class="map-svg" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
+                                <rect fill="#0d1117" width="320" height="320" />
+                                <line x1="0" y1="80" x2="320" y2="80" stroke="#1e2030" stroke-width="12" />
+                                <line x1="0" y1="160" x2="320" y2="160" stroke="#1e2030" stroke-width="18" />
+                                <line x1="0" y1="240" x2="320" y2="240" stroke="#1e2030" stroke-width="12" />
+                                <line x1="80" y1="0" x2="80" y2="320" stroke="#1e2030" stroke-width="12" />
+                                <line x1="160" y1="0" x2="160" y2="320" stroke="#1e2030" stroke-width="18" />
+                                <line x1="240" y1="0" x2="240" y2="320" stroke="#1e2030" stroke-width="12" />
+                                <rect x="88" y="88" width="64" height="64" fill="#121620" rx="4" />
+                                <rect x="168" y="88" width="64" height="64" fill="#121620" rx="4" />
+                                <rect x="88" y="168" width="64" height="64" fill="#121620" rx="4" />
+                                <rect x="168" y="168" width="64" height="64" fill="#121620" rx="4" />
+                            </svg>
+                            <div class="car-dot"
+                                style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:36px;height:36px;font-size:16px;">
+                                🚕</div>
+                        </div>
+                        <div class="bottom-card">
+                            <div class="drag-handle"></div>
+                            <div class="toggle-card">
+                                <div class="toggle-info">
+                                    <div class="label">Disponible</div>
+                                    <div class="sub">Estás recibiendo viajes</div>
+                                </div>
+                                <div class="toggle-switch"></div>
+                            </div>
+                            <div class="earnings-row">
+                                <div class="earn-chip">
+                                    <div class="val">$8.400</div>
+                                    <div class="lbl">Hoy</div>
+                                </div>
+                                <div class="earn-chip">
+                                    <div class="val">7</div>
+                                    <div class="lbl">Viajes</div>
+                                </div>
+                                <div class="earn-chip">
+                                    <div class="val">4h 20m</div>
+                                    <div class="lbl">En línea</div>
+                                </div>
+                            </div>
+                            <div class="request-card">
+                                <div class="request-header">
+                                    <span class="new-badge">NUEVO VIAJE</span>
+                                    <span class="amount">$1.850</span>
+                                </div>
+                                <div class="route-list">
+                                    <div class="route-item">
+                                        <div class="rdot g"></div>Av. Rivadavia 1240
+                                    </div>
+                                    <div class="route-item">
+                                        <div class="rdot b"></div>Centro Cívico Comodoro
+                                    </div>
+                                </div>
+                                <div class="btn-row">
+                                    <button class="btn-accept">Aceptar</button>
+                                    <button class="btn-reject">Rechazar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PANTALLA 2: EN VIAJE -->
+            <div class="phone-block">
+                <div class="phone-label">
+                    <div class="dot blue"></div>En viaje
+                </div>
+                <div class="phone">
+                    <div class="screen">
+                        <div class="status-bar">
+                            <span class="status-time">14:31</span>
+                            <div class="status-icons"><span>●●●</span><span>WiFi</span><span>🔋</span></div>
+                        </div>
+                        <div class="map-area">
+                            <svg class="map-svg" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
+                                <rect fill="#0d1117" width="320" height="320" />
+                                <line x1="0" y1="80" x2="320" y2="80" stroke="#1e2030" stroke-width="12" />
+                                <line x1="0" y1="160" x2="320" y2="160" stroke="#1e2030" stroke-width="18" />
+                                <line x1="0" y1="240" x2="320" y2="240" stroke="#1e2030" stroke-width="12" />
+                                <line x1="80" y1="0" x2="80" y2="320" stroke="#1e2030" stroke-width="12" />
+                                <line x1="160" y1="0" x2="160" y2="320" stroke="#1e2030" stroke-width="18" />
+                                <line x1="240" y1="0" x2="240" y2="320" stroke="#1e2030" stroke-width="12" />
+                                <rect x="88" y="88" width="64" height="64" fill="#121620" rx="4" />
+                                <rect x="168" y="88" width="64" height="64" fill="#121620" rx="4" />
+                                <rect x="88" y="168" width="64" height="64" fill="#121620" rx="4" />
+                                <rect x="168" y="168" width="64" height="64" fill="#121620" rx="4" />
+                                <polyline points="160,200 160,160 240,160 240,100" stroke="#0088ff" stroke-width="3"
+                                    fill="none" stroke-dasharray="0" opacity="0.9" />
+                            </svg>
+                            <div class="map-pin" style="left:75%;top:32%;">
+                                <div class="pin-circle blue"><span class="pin-icon">🏁</span></div>
+                            </div>
+                            <div class="car-dot"
+                                style="position:absolute;left:50%;top:62%;transform:translate(-50%,-50%);width:36px;height:36px;font-size:16px;">
+                                🚕</div>
+                        </div>
+                        <div class="bottom-card">
+                            <div class="drag-handle"></div>
+                            <div class="driver-card" style="margin-bottom:14px;">
+                                <div class="driver-avatar">👩</div>
+                                <div class="driver-info">
+                                    <div class="name">María G. (Pasajera)</div>
+                                    <div class="sub"><span class="stars">★★★★★</span><span>4.8</span></div>
+                                </div>
+                                <div class="driver-eta">
+                                    <div class="mins">8'</div>
+                                    <div class="label">al destino</div>
+                                </div>
+                            </div>
+                            <div class="trip-card">
+                                <div class="trip-card-header">
+                                    <span class="title">Centro Cívico</span>
+                                    <span class="price">$1.850</span>
+                                </div>
+                                <div class="trip-card-body">
+                                    <span>3.1 km restantes</span>
+                                    <span class="trip-chip">En curso</span>
+                                </div>
+                            </div>
+                            <button class="btn-primary">Finalizar viaje</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ADMIN -->
+    <div id="admin-section" class="section">
+        <div class="admin-header">
+            <div>
+                <h2>Panel de <span>Administración</span></h2>
+                <div class="admin-date">Lunes 30 de marzo, 2026 · Comodoro Rivadavia</div>
+            </div>
+            <div style="display:flex;gap:10px;align-items:center;">
+                <div
+                    style="width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px rgba(0,200,150,0.5);">
+                </div>
+                <span style="font-size:0.82rem;color:var(--text2);">Sistema operativo</span>
+            </div>
+        </div>
+
+        <div class="kpi-grid">
+            <div class="kpi-card">
+                <div class="kpi-label">Viajes hoy</div>
+                <div class="kpi-value">142</div>
+                <div class="kpi-change">↑ 18% vs ayer</div>
+            </div>
+            <div class="kpi-card blue">
+                <div class="kpi-label">Conductores activos</div>
+                <div class="kpi-value">23</div>
+                <div class="kpi-change">↑ 4 más que ayer</div>
+            </div>
+            <div class="kpi-card warn">
+                <div class="kpi-label">Ingresos del día</div>
+                <div class="kpi-value">$214k</div>
+                <div class="kpi-change down">↓ 3% vs ayer</div>
+            </div>
+            <div class="kpi-card purple">
+                <div class="kpi-label">Usuarios registrados</div>
+                <div class="kpi-value">1.840</div>
+                <div class="kpi-change">↑ 12 nuevos hoy</div>
+            </div>
+        </div>
+
+        <div class="admin-grid">
+            <!-- CHART -->
+            <div class="admin-card">
+                <div class="admin-card-title">
+                    <span>Viajes por hora</span>
+                    <span class="see-all">Esta semana</span>
+                </div>
+                <div class="mini-chart">
+                    <div class="bar dim" style="height:30%"></div>
+                    <div class="bar dim" style="height:20%"></div>
+                    <div class="bar dim" style="height:40%"></div>
+                    <div class="bar accent" style="height:55%"></div>
+                    <div class="bar accent" style="height:80%"></div>
+                    <div class="bar accent" style="height:95%"></div>
+                    <div class="bar accent" style="height:100%"></div>
+                    <div class="bar accent" style="height:75%"></div>
+                    <div class="bar dim" style="height:50%"></div>
+                    <div class="bar dim" style="height:35%"></div>
+                    <div class="bar dim" style="height:28%"></div>
+                    <div class="bar dim" style="height:20%"></div>
+                </div>
+                <div class="chart-labels">
+                    <span>6</span><span>8</span><span>10</span><span>12</span>
+                    <span>14</span><span>16</span><span>18</span><span>20</span>
+                    <span>22</span><span>0</span><span>2</span><span>4</span>
+                </div>
+            </div>
+
+            <!-- CONDUCTORES -->
+            <div class="admin-card">
+                <div class="admin-card-title">
+                    <span>Conductores</span>
+                    <span class="see-all">Ver todos →</span>
+                </div>
+                <div class="conductor-list">
+                    <div class="conductor-row">
+                        <div class="c-avatar">CR</div>
+                        <div class="c-info">
+                            <div class="c-name">Carlos Rodríguez</div>
+                            <div class="c-sub">Toyota Corolla · ABC 123</div>
+                        </div>
+                        <div class="c-badge trip">En viaje</div>
+                    </div>
+                    <div class="conductor-row">
+                        <div class="c-avatar">MP</div>
+                        <div class="c-info">
+                            <div class="c-name">Marcela Pereyra</div>
+                            <div class="c-sub">Volkswagen Gol · XYZ 789</div>
+                        </div>
+                        <div class="c-badge online">En línea</div>
+                    </div>
+                    <div class="conductor-row">
+                        <div class="c-avatar">JL</div>
+                        <div class="c-info">
+                            <div class="c-name">Jorge López</div>
+                            <div class="c-sub">Renault Logan · DEF 456</div>
+                        </div>
+                        <div class="c-badge online">En línea</div>
+                    </div>
+                    <div class="conductor-row">
+                        <div class="c-avatar">SG</div>
+                        <div class="c-info">
+                            <div class="c-name">Silvia González</div>
+                            <div class="c-sub">Fiat Siena · GHI 012</div>
+                        </div>
+                        <div class="c-badge offline">Desconectado</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MAPA ACTIVO -->
+            <div class="admin-card full">
+                <div class="admin-card-title">
+                    <span>Actividad en tiempo real — Comodoro Rivadavia</span>
+                    <span class="see-all">Pantalla completa →</span>
+                </div>
+                <div class="map-admin">
+                    <svg width="100%" height="100%" viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg">
+                        <rect fill="#0d1117" width="800" height="200" />
+                        <line x1="0" y1="50" x2="800" y2="50" stroke="#1e2030" stroke-width="10" />
+                        <line x1="0" y1="100" x2="800" y2="100" stroke="#1e2030" stroke-width="16" />
+                        <line x1="0" y1="150" x2="800" y2="150" stroke="#1e2030" stroke-width="10" />
+                        <line x1="100" y1="0" x2="100" y2="200" stroke="#1e2030" stroke-width="10" />
+                        <line x1="200" y1="0" x2="200" y2="200" stroke="#1e2030" stroke-width="10" />
+                        <line x1="300" y1="0" x2="300" y2="200" stroke="#1e2030" stroke-width="16" />
+                        <line x1="400" y1="0" x2="400" y2="200" stroke="#1e2030" stroke-width="10" />
+                        <line x1="500" y1="0" x2="500" y2="200" stroke="#1e2030" stroke-width="10" />
+                        <line x1="600" y1="0" x2="600" y2="200" stroke="#1e2030" stroke-width="16" />
+                        <line x1="700" y1="0" x2="700" y2="200" stroke="#1e2030" stroke-width="10" />
+                        <rect x="108" y="8" width="84" height="84" fill="#12121a" rx="4" />
+                        <rect x="208" y="8" width="84" height="84" fill="#12121a" rx="4" />
+                        <rect x="308" y="8" width="84" height="84" fill="#12121a" rx="4" />
+                        <rect x="408" y="8" width="84" height="84" fill="#12121a" rx="4" />
+                        <rect x="508" y="8" width="84" height="84" fill="#12121a" rx="4" />
+                        <rect x="108" y="108" width="84" height="84" fill="#12121a" rx="4" />
+                        <rect x="308" y="108" width="84" height="84" fill="#12121a" rx="4" />
+                        <rect x="508" y="108" width="84" height="84" fill="#12121a" rx="4" />
+                        <rect x="608" y="108" width="84" height="84" fill="#12121a" rx="4" />
+                    </svg>
+                    <div class="active-dots">
+                        <div class="a-dot" style="left:15%;top:40%;"></div>
+                        <div class="a-dot" style="left:28%;top:65%;"></div>
+                        <div class="a-dot blue" style="left:42%;top:35%;"></div>
+                        <div class="a-dot" style="left:55%;top:70%;"></div>
+                        <div class="a-dot warn" style="left:63%;top:45%;"></div>
+                        <div class="a-dot blue" style="left:72%;top:30%;"></div>
+                        <div class="a-dot" style="left:80%;top:60%;"></div>
+                        <div class="a-dot blue" style="left:35%;top:55%;"></div>
+                    </div>
+                    <div class="map-label"><strong>23 conductores activos</strong> · 8 viajes en curso</div>
+                </div>
+            </div>
+
+            <!-- VIAJES RECIENTES -->
+            <div class="admin-card full">
+                <div class="admin-card-title">
+                    <span>Últimos viajes</span>
+                    <span class="see-all">Ver historial completo →</span>
+                </div>
+                <div class="trip-list">
+                    <div class="trip-row">
+                        <div class="t-icon">🚕</div>
+                        <div class="t-info">
+                            <div class="t-route">Av. Rivadavia → Terminal de Ómnibus</div>
+                            <div class="t-meta">Carlos R. · hace 4 min · 3.2 km</div>
+                        </div>
+                        <div class="t-price">$1.420</div>
+                    </div>
+                    <div class="trip-row">
+                        <div class="t-icon">🚕</div>
+                        <div class="t-info">
+                            <div class="t-route">Km 3 → Hospital Regional</div>
+                            <div class="t-meta">Marcela P. · hace 11 min · 5.8 km</div>
+                        </div>
+                        <div class="t-price">$2.100</div>
+                    </div>
+                    <div class="trip-row">
+                        <div class="t-icon">🚕</div>
+                        <div class="t-info">
+                            <div class="t-route">YPF Centro → Aeropuerto Gral. Mosconi</div>
+                            <div class="t-meta">Jorge L. · hace 18 min · 14.2 km</div>
+                        </div>
+                        <div class="t-price">$4.800</div>
+                    </div>
+                    <div class="trip-row">
+                        <div class="t-icon">🚕</div>
+                        <div class="t-info">
+                            <div class="t-route">Rada Tilly → Plaza San Martín</div>
+                            <div class="t-meta">Silvia G. · hace 25 min · 8.1 km</div>
+                        </div>
+                        <div class="t-price">$3.200</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="footer">SUBI · UI Mockup — Solo referencia visual, no funcional</div>
+
+    <script>
+        function showSection(name) {
+            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById(name + '-section').classList.add('active');
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+
+</html>

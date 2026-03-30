@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SUBI — Presentación del proyecto</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .mockup-btn {
+      background: transparent;
+      border: 1px solid var(--accent) !important;
+      color: var(--accent) !important;
+      font-weight: 600;
+    }
+
+    .mockup-btn:hover {
+      background: var(--accent) !important;
+      color: #000 !important;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="nav">
+    <div class="nav-brand">SUBI</div>
+    <div class="nav-right">
+      <span class="nav-counter" id="ctr">1 / 11</span>
+      <button class="nbtn" onclick="go(-1)">← Anterior</button>
+      <button class="nbtn" onclick="go(1)">Siguiente →</button>
+      <button class="nbtn p" onclick="window.print()">Exportar PDF</button>
+      <button class="nbtn mockup-btn" onclick="window.open('mockup.html','_blank')">Ver Mockup UI</button>
+    </div>
+  </nav>
+
+  <div class="pbar" id="pb"></div>
+  <div class="dots" id="dots"></div>
+
+  <div class="wrap">
+    <div class="vp">
+
+
+      <!-- ══════════════════════════════════════════════
+     S1 · PORTADA
+══════════════════════════════════════════════ -->
+      <div class="slide on" id="s1" style="flex-direction:column; justify-content:center; padding:8% 10%;">
+        <div class="bg-grid" style="opacity:.18;"></div>
+        <div class="bg-glow"
+          style="right:-5%; top:-15%; width:55%; height:130%; background:radial-gradient(ellipse, rgba(0,200,150,.07), transparent 65%);">
+        </div>
+
+        <div style="position:relative;">
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:4%;">
+            <div style="width:28px; height:1px; background:var(--accent);"></div>
+            <span
+              style="font-size:clamp(.62rem,.9vw,.72rem); letter-spacing:3px; text-transform:uppercase; color:var(--accent);">Propuesta
+              de Proyecto · 2026</span>
+          </div>
+
+          <div class="h1" style="font-size:clamp(2rem,5.5vw,4.2rem); max-width:72%; margin-bottom:3%;">
+            App de transporte<br>urbano para<br><span class="g">Comodoro Rivadavia</span>
+          </div>
+
+          <div class="body" style="max-width:52%; margin-bottom:5%; font-size:clamp(.76rem,1.25vw,.98rem);">
+            Plataforma digital de movilidad urbana regulada, con arquitectura técnica moderna, cumplimiento de la
+            ordenanza municipal vigente y API de fiscalización en tiempo real.
+          </div>
+
+          <div class="hs">
+            <span class="pill g">Regulado · Ord. 3425/89</span>
+            <span class="pill b">React Native + Node.js</span>
+            <span class="pill pu">Supabase / Firebase</span>
+            <span class="pill n">MVP · 6 meses</span>
+            <span class="pill n">Comodoro Rivadavia</span>
+          </div>
+        </div>
+
+        <div
+          style="position:absolute; right:7%; bottom:8%; font-family:'Syne',sans-serif; font-size:clamp(5rem,12vw,9rem); font-weight:800; color:rgba(255,255,255,.025); line-height:1; pointer-events:none;">
+          CV</div>
+      </div>
+
+
+      <!-- ══════════════════════════════════════════════
+     S2 · CONTEXTO Y OPORTUNIDAD
+══════════════════════════════════════════════ -->
+      <div class="slide" id="s2">
+        <div class="inner">
+          <div class="hdr">
+            <div class="tag">Contexto</div>
+            <div class="h2">La oportunidad en <span class="g">Comodoro Rivadavia</span></div>
+          </div>
+          <div class="content">
+            <div class="g3 fill as">
+
+              <div class="card g vs">
+                <div class="card-title"><span class="g">Marco legal habilitado</span></div>
+                <div class="body">La ordenanza <strong>3425/89</strong> regula y actualmente sanciona el transporte por
+                  aplicaciones en Comodoro Rivadavia. Este proyecto opera <strong>dentro del marco legal
+                    vigente</strong>, con habilitación municipal, diferenciándose de servicios informales.</div>
+              </div>
+
+              <div class="card b vs">
+                <div class="card-title"><span class="b">Mercado disponible</span></div>
+                <div class="body">Comodoro Rivadavia cuenta con <strong>180.000 habitantes</strong> y no dispone de una
+                  plataforma digital de transporte regulada. La demanda existe y el mercado está sin ocupar por un
+                  servicio formal.</div>
+              </div>
+
+              <div class="card pu vs">
+                <div class="card-title"><span class="p">Modelo sustentable</span></div>
+                <div class="body">Una comisión del <strong>15% sobre cada viaje</strong> permite al conductor retener
+                  más ingresos que en plataformas similares, generando una comunidad de conductores comprometida desde
+                  el inicio.</div>
+              </div>
+
+              <div class="card vs" style="grid-column:1/-1; flex-direction:row; gap:4%;">
+                <div style="flex:1; border-right:1px solid var(--border); padding-right:4%;">
+                  <div class="tag" style="margin-bottom:2%;">Usuarios objetivo</div>
+                  <ul class="cl">
+                    <li><span class="i">—</span><span><strong>Pasajeros:</strong> personas que necesitan movilizarse en
+                        la ciudad de forma rápida y segura</span></li>
+                    <li><span class="i">—</span><span><strong>Conductores:</strong> propietarios de vehículos
+                        particulares o comerciales habilitados</span></li>
+                    <li><span class="i">—</span><span><strong>Municipio:</strong> acceso a auditoría en tiempo real del
+                        servicio de transporte urbano</span></li>
+                  </ul>
+                </div>
+                <div style="flex:1;">
+                  <div class="tag" style="margin-bottom:2%;">Diferencial clave</div>
+                  <ul class="cl">
+                    <li><span class="i">—</span><span>Único servicio <strong>legalmente habilitado</strong> por el
+                        municipio</span></li>
+                    <li><span class="i">—</span><span>API de fiscalización para <strong>auditoría municipal en tiempo
+                          real</strong></span></li>
+                    <li><span class="i">—</span><span>Equipo y soporte <strong>100% local</strong></span></li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- ══════════════════════════════════════════════
+     S3 · FUNCIONALIDADES MVP
+══════════════════════════════════════════════ -->
+      <div class="slide" id="s3">
+        <div class="inner">
+          <div class="hdr">
+            <div class="tag">Producto</div>
+            <div class="h2">Funcionalidades del <span class="g">MVP</span></div>
+          </div>
+          <div class="content">
+            <div class="g3 fill as">
+
+              <div class="card vs">
+                <div class="card-title">App del pasajero</div>
+                <ul class="cl">
+                  <li><span class="i">—</span><span>Registro y login con verificación</span></li>
+                  <li><span class="i">—</span><span>Solicitud de viaje con origen y destino</span></li>
+                  <li><span class="i">—</span><span>Geolocalización y seguimiento del conductor en mapa</span></li>
+                  <li><span class="i">—</span><span>Cálculo automático de tarifa</span></li>
+                  <li><span class="i">—</span><span>Pago en efectivo (fase 1) y Mercado Pago (fase 2)</span></li>
+                  <li><span class="i">—</span><span>Calificación y comentarios del conductor</span></li>
+                  <li><span class="i">—</span><span>Historial de viajes</span></li>
+                  <li><span class="i">—</span><span>Botón de emergencia</span></li>
+                </ul>
+              </div>
+
+              <div class="card b vs">
+                <div class="card-title"><span class="b">App del conductor</span></div>
+                <ul class="cl">
+                  <li><span class="i">—</span><span>Registro con validación de documentos y habilitación</span></li>
+                  <li><span class="i">—</span><span>Activar / desactivar disponibilidad</span></li>
+                  <li><span class="i">—</span><span>Recepción y aceptación de solicitudes</span></li>
+                  <li><span class="i">—</span><span>Navegación con ruta en tiempo real</span></li>
+                  <li><span class="i">—</span><span>Vista de ganancias del día y semana</span></li>
+                  <li><span class="i">—</span><span>Historial de viajes realizados</span></li>
+                  <li><span class="i">—</span><span>Notificaciones push</span></li>
+                </ul>
+              </div>
+
+              <div class="card pu vs">
+                <div class="card-title"><span class="p">Panel de administración</span></div>
+                <ul class="cl">
+                  <li><span class="i">—</span><span>Mapa con conductores y viajes activos en tiempo real</span></li>
+                  <li><span class="i">—</span><span>Gestión de conductores y usuarios</span></li>
+                  <li><span class="i">—</span><span>Estadísticas de viajes, ingresos y comisiones</span></li>
+                  <li><span class="i">—</span><span>Configuración de tarifas y comisiones</span></li>
+                  <li><span class="i">—</span><span>Módulo de reportes</span></li>
+                  <li><span class="i">—</span><span>Gestión de la API municipal</span></li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- ══════════════════════════════════════════════
+     S4 · MARCO LEGAL Y API MUNICIPAL
+══════════════════════════════════════════════ -->
+      <div class="slide" id="s4">
+        <div class="inner">
+          <div class="hdr">
+            <div class="tag orange">Marco Legal</div>
+            <div class="h2">Ordenanza <span class="o">3425/89</span> · API de Fiscalización Municipal</div>
+          </div>
+          <div class="content">
+            <div class="g21 fill as">
+
+              <div class="vs">
+                <div class="card or vs">
+                  <div class="card-title" style="color:var(--orange);">Ordenanza Municipal 3425/89</div>
+                  <div class="body">La ordenanza regula y <strong>sanciona actualmente</strong> el transporte por
+                    aplicaciones en Comodoro Rivadavia.<br>Para ello, la plataforma expone una <strong>API de
+                      fiscalización</strong>
+                    que le permite a la municipalidad auditar el servicio en tiempo real, <strong>sin vulnerar la
+                      privacidad de los usuarios</strong>.</div>
+                </div>
+
+                <div class="ep">
+                  <div class="ep-head">
+                    <span class="ep-method get">GET</span>
+                    <span class="ep-path">/fiscalizacion/conductor/<span>{id}</span></span>
+                  </div>
+                  <div class="ep-body">
+                    <span class="k">habilitado</span>: <span class="v">true</span><br>
+                    <span class="k">documentacion_vigente</span>: <span class="v">true</span><br>
+                    <span class="k">vehiculo_habilitado</span>: <span class="v">true</span><br>
+                    <span class="c">// Sin datos de pasajero ni viaje</span>
+                  </div>
+                </div>
+
+                <div class="ep">
+                  <div class="ep-head">
+                    <span class="ep-method get">GET</span>
+                    <span class="ep-path">/fiscalizacion/<span>viajes-activos</span></span>
+                  </div>
+                  <div class="ep-body">
+                    <span class="k">total_viajes_en_curso</span>: <span class="v">14</span><br>
+                    <span class="k">conductores_en_linea</span>: <span class="v">23</span><br>
+                    <span class="k">zonas</span>: <span class="s">["centro","km3","rada_tilly"]</span><br>
+                    <span class="c">// Datos agregados, sin identificar usuarios</span>
+                  </div>
+                </div>
+
+                <div class="ep">
+                  <div class="ep-head">
+                    <span class="ep-method post">POST</span>
+                    <span class="ep-path">→ <span>municipio/webhook/canon</span></span>
+                  </div>
+                  <div class="ep-body">
+                    <span class="k">viaje_id</span>: <span class="s">"uuid-anonimizado"</span><br>
+                    <span class="k">monto_viaje</span>: <span class="v">1850</span><br>
+                    <span class="k">canon_calculado</span>: <span class="v">92.5</span><br>
+                    <span class="k">zona</span>: <span class="s">"centro"</span><br>
+                    <span class="c">// Sin datos personales identificables</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="vs">
+                <div class="card vs">
+                  <div class="card-title">Privacidad garantizada</div>
+                  <div class="body">Los tres endpoints están diseñados bajo el principio de <strong>mínima exposición de
+                      datos</strong>. El municipio puede verificar habilitaciones, medir actividad del servicio y
+                    recaudar el canon automáticamente, <strong>sin acceder a ningún dato personal</strong> de pasajeros
+                    ni rutas individuales.</div>
+                </div>
+                <div class="card g vs">
+                  <div class="card-title"><span class="g">Ventaja competitiva legal</span></div>
+                  <div class="body">Esta API convierte el cumplimiento normativo en una <strong>ventaja
+                      estructural</strong>: cualquier otro servicio que quiera operar en Comodoro deberá cumplir la
+                    misma ordenanza, y esta plataforma ya tiene la infraestructura construida desde el origen.</div>
+                </div>
+                <div class="card or vs">
+                  <div class="card-title" style="color:var(--orange);">Canon Municipal</div>
+                  <div class="body">El webhook de canon dispara automáticamente al completarse cada viaje, enviando al
+                    sistema municipal el monto a recaudar <strong>sin intervención manual</strong>. Transparencia total
+                    para el municipio, cero fricción para la operación.</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- ══════════════════════════════════════════════
+     S5 · ARQUITECTURA GENERAL
+══════════════════════════════════════════════ -->
+      <div class="slide" id="s5">
+        <div class="inner">
+          <div class="hdr">
+            <div class="tag blue">Arquitectura</div>
+            <div class="h2">Estructura general del <span class="b">sistema</span></div>
+          </div>
+          <div class="content">
+            <div class="g21 fill as">
+
+              <div class="vs">
+                <div class="arch-layer g">
+                  <div class="arch-label g">Frontend</div>
+                  <div class="arch-pills">
+                    <span class="pill g">App Pasajero</span>
+                    <span class="pill g">App Conductor</span>
+                    <span class="pill n">React Native / Flutter</span>
+                    <span class="pill n">iOS + Android</span>
+                  </div>
+                </div>
+                <div style="text-align:center; font-size:.78rem; color:var(--text3);">HTTPS / WebSocket</div>
+                <div class="arch-layer b">
+                  <div class="arch-label b">API Gateway</div>
+                  <div class="arch-pills">
+                    <span class="pill b">Node.js + Express</span>
+                    <span class="pill b">JWT Auth</span>
+                    <span class="pill b">REST + WebSocket</span>
+                    <span class="pill n">SSL/TLS</span>
+                  </div>
+                </div>
+                <div style="text-align:center; font-size:.78rem; color:var(--text3);">Servicios internos</div>
+                <div class="arch-layer p">
+                  <div class="arch-label p">Servicios</div>
+                  <div class="arch-pills">
+                    <span class="pill pu">Auth Service</span>
+                    <span class="pill pu">Ride Service</span>
+                    <span class="pill pu">Location Service</span>
+                    <span class="pill pu">Payment Service</span>
+                    <span class="pill n">Push Notifications</span>
+                  </div>
+                </div>
+                <div style="text-align:center; font-size:.78rem; color:var(--text3);">Persistencia</div>
+                <div class="arch-layer o">
+                  <div class="arch-label o">Datos</div>
+                  <div class="arch-pills">
+                    <span class="pill or">Supabase (PostgreSQL)</span>
+                    <span class="pill or">Redis (cache)</span>
+                    <span class="pill n">Tiempo real</span>
+                  </div>
+                </div>
+                <div style="text-align:center; font-size:.78rem; color:var(--text3);">Webhook</div>
+                <div class="arch-layer n">
+                  <div class="arch-label" style="color:var(--text2);">API Municipal</div>
+                  <div class="arch-pills">
+                    <span class="pill n">Fiscalización</span>
+                    <span class="pill n">Canon Automático</span>
+                    <span class="pill n">Ord. 3425/89</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="vs">
+                <div class="card vs">
+                  <div class="card-title">Panel Admin Web</div>
+                  <ul class="cl">
+                    <li><span class="i">—</span><span><strong>React.js</strong> — dashboard en tiempo real</span></li>
+                    <li><span class="i">—</span><span>Consume la misma API REST del backend</span></li>
+                    <li><span class="i">—</span><span>Autenticación separada con roles</span></li>
+                    <li><span class="i">—</span><span>Módulo de fiscalización municipal integrado</span></li>
+                  </ul>
+                </div>
+                <div class="card b vs">
+                  <div class="card-title"><span class="b">Comunicación en tiempo real</span></div>
+                  <ul class="cl">
+                    <li><span class="i">—</span><span><strong>WebSockets</strong> para ubicación del conductor</span>
+                    </li>
+                    <li><span class="i">—</span><span><strong>Push notifications</strong> vía Firebase Cloud
+                        Messaging</span></li>
+                    <li><span class="i">—</span><span>Estado del viaje sincronizado en todas las apps</span></li>
+                  </ul>
+                </div>
+                <div class="card g vs">
+                  <div class="card-title"><span class="g">Hosting e infraestructura</span></div>
+                  <ul class="cl">
+                    <li><span class="i">—</span><span><strong>Supabase Cloud</strong> o VPS propio (Railway /
+                        Render)</span></li>
+                    <li><span class="i">—</span><span>Certificados SSL obligatorios desde el día 1</span></li>
+                    <li><span class="i">—</span><span>Escalable horizontalmente cuando el uso crezca</span></li>
+                    <li><span class="i">—</span><span><strong>$100–200 USD/mes</strong> en infraestructura para la fase
+                        inicial</span></li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- ══════════════════════════════════════════════
+     S6 · STACK TECNOLÓGICO
+══════════════════════════════════════════════ -->
+      <div class="slide" id="s6">
+        <div class="inner">
+          <div class="hdr">
+            <div class="tag">Tecnología</div>
+            <div class="h2">Stack tecnológico <span class="g">seleccionado</span></div>
+          </div>
+          <div class="content">
+            <div class="g4 fill as">
+
+              <div class="card g vs">
+                <div class="card-title"><span class="g">Apps Móviles</span></div>
+                <ul class="cl">
+                  <li><span class="i">—</span><span><strong>React Native</strong> — un código para iOS y Android</span>
+                  </li>
+                  <li><span class="i">—</span><span>JavaScript / TypeScript</span></li>
+                  <li><span class="i">—</span><span>Expo para desarrollo ágil</span></li>
+                  <li><span class="i">—</span><span>Publicación en App Store y Play Store</span></li>
+                </ul>
+              </div>
+
+              <div class="card b vs">
+                <div class="card-title"><span class="b">Backend</span></div>
+                <ul class="cl">
+                  <li><span class="i">—</span><span><strong>Node.js + Express</strong></span></li>
+                  <li><span class="i">—</span><span>API REST + WebSockets</span></li>
+                  <li><span class="i">—</span><span>JWT para autenticación segura</span></li>
+                  <li><span class="i">—</span><span>bcrypt para contraseñas</span></li>
+                  <li><span class="i">—</span><span>Variables de entorno para secrets</span></li>
+                </ul>
+              </div>
+
+              <div class="card pu vs">
+                <div class="card-title"><span class="p">Base de Datos</span></div>
+                <ul class="cl">
+                  <li><span class="i">—</span><span><strong>Supabase</strong> (PostgreSQL)</span></li>
+                  <li><span class="i">—</span><span>Tiempo real nativo</span></li>
+                  <li><span class="i">—</span><span>Autenticación integrada</span></li>
+                  <li><span class="i">—</span><span>Redis para caché de ubicaciones</span></li>
+                  <li><span class="i">—</span><span>Open source, sin vendor lock-in</span></li>
+                </ul>
+              </div>
+
+              <div class="card or vs">
+                <div class="card-title" style="color:var(--orange);">Mapas y Pagos</div>
+                <ul class="cl">
+                  <li><span class="i">—</span><span><strong>Mapbox</strong> — gratis hasta 50k cargas/mes</span></li>
+                  <li><span class="i">—</span><span>O <strong>OpenStreetMap + Leaflet</strong> (100% gratuito)</span>
+                  </li>
+                  <li><span class="i">—</span><span><strong>Mercado Pago SDK</strong> para pagos digitales</span></li>
+                  <li><span class="i">—</span><span>Efectivo habilitado desde el inicio</span></li>
+                </ul>
+              </div>
+
+              <div class="card vs" style="grid-column:1/-1; flex-direction:row; gap:4%;">
+                <div style="flex:1; border-right:1px solid var(--border); padding-right:4%;">
+                  <div class="card-title" style="margin-bottom:4%;">Notificaciones y Tiempo Real</div>
+                  <ul class="cl">
+                    <li><span class="i">—</span><span><strong>Firebase Cloud Messaging</strong> para push
+                        notifications</span></li>
+                    <li><span class="i">—</span><span><strong>WebSockets</strong> para ubicación en tiempo real del
+                        conductor</span></li>
+                    <li><span class="i">—</span><span>Estado del viaje sincronizado en todas las apps
+                        simultáneamente</span></li>
+                  </ul>
+                </div>
+                <div style="flex:1; border-right:1px solid var(--border); padding-right:4%;">
+                  <div class="card-title" style="margin-bottom:4%;">Panel Admin</div>
+                  <ul class="cl">
+                    <li><span class="i">—</span><span><strong>React.js</strong> — interfaz web responsive</span></li>
+                    <li><span class="i">—</span><span>Consume la misma API del backend</span></li>
+                    <li><span class="i">—</span><span>Módulo de fiscalización municipal integrado</span></li>
+                  </ul>
+                </div>
+                <div style="flex:1;">
+                  <div class="card-title" style="margin-bottom:4%;">Seguridad</div>
+                  <ul class="cl">
+                    <li><span class="i">—</span><span>SSL/TLS obligatorio en todos los endpoints</span></li>
+                    <li><span class="i">—</span><span>JWT con expiración + refresh tokens</span></li>
+                    <li><span class="i">—</span><span>Secrets en variables de entorno, nunca en código</span></li>
+                    <li><span class="i">—</span><span>Verificación de identidad de conductores</span></li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- ══════════════════════════════════════════════
+     S7 · BASE DE DATOS
+══════════════════════════════════════════════ -->
+      <div class="slide" id="s7">
+        <div class="inner">
+          <div class="hdr">
+            <div class="tag purple">Base de Datos</div>
+            <div class="h2">Esquema de datos <span class="p">principal</span></div>
+          </div>
+          <div class="content">
+            <div class="g3 fill as">
+
+              <div class="vs">
+                <div class="card-title"
+                  style="margin-bottom:4%; font-size:clamp(.64rem,1vw,.8rem); color:var(--text2); text-transform:uppercase; letter-spacing:1px;">
+                  Tabla: Users</div>
+                <div class="code">
+                  <span class="cm">-- Tabla users (Supabase/PostgreSQL)</span><br>
+                  id &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; UUID &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">PRIMARY
+                    KEY</span><br>
+                  name &nbsp;&nbsp;&nbsp;&nbsp; VARCHAR(100)<br>
+                  email &nbsp;&nbsp;&nbsp; VARCHAR &nbsp;&nbsp;<span class="kw">UNIQUE</span><br>
+                  password &nbsp;<span class="st">hashed (bcrypt)</span><br>
+                  role &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="st">'user'|'driver'|'admin'</span><br>
+                  verified &nbsp; BOOLEAN<br>
+                  created_at TIMESTAMP
+                </div>
+                <div class="card b vs" style="margin-top:4%;">
+                  <div class="card-title"><span class="b">Conductor (extensión)</span></div>
+                  <div class="code" style="margin-top:4%;">
+                    driver_id &nbsp;&nbsp;&nbsp; → users.id<br>
+                    licencia &nbsp;&nbsp;&nbsp;&nbsp; VARCHAR<br>
+                    vehiculo &nbsp;&nbsp;&nbsp;&nbsp; JSONB<br>
+                    habilitado &nbsp;&nbsp; BOOLEAN<br>
+                    doc_vigente &nbsp; BOOLEAN<br>
+                    rating &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DECIMAL(3,2)
+                  </div>
+                </div>
+              </div>
+
+              <div class="vs">
+                <div class="card-title"
+                  style="margin-bottom:4%; font-size:clamp(.64rem,1vw,.8rem); color:var(--text2); text-transform:uppercase; letter-spacing:1px;">
+                  Tabla: Rides</div>
+                <div class="code">
+                  id &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; UUID <span class="kw">PRIMARY KEY</span><br>
+                  user_id &nbsp;&nbsp;&nbsp; → users.id<br>
+                  driver_id &nbsp; → users.id<br>
+                  origin &nbsp;&nbsp;&nbsp;&nbsp; JSONB <span class="cm">-- {lat,lng,addr}</span><br>
+                  destination JSONB <span class="cm">-- {lat,lng,addr}</span><br>
+                  fare &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DECIMAL(10,2)<br>
+                  commission &nbsp;DECIMAL(10,2)<br>
+                  status &nbsp;&nbsp;&nbsp;&nbsp; <span class="st">'requested'|'accepted'|</span><br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                    class="st">'in_progress'|'completed'</span><br>
+                  timestamp &nbsp; TIMESTAMPTZ
+                </div>
+                <div class="card g vs" style="margin-top:4%;">
+                  <div class="card-title"><span class="g">Canon Municipal</span></div>
+                  <div class="code" style="margin-top:4%;">
+                    ride_uuid &nbsp;&nbsp;<span class="cm">-- anonimizado</span><br>
+                    monto &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DECIMAL<br>
+                    canon &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DECIMAL <span class="cm">-- calculado</span><br>
+                    zona &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VARCHAR<br>
+                    enviado_mun BOOLEAN
+                  </div>
+                </div>
+              </div>
+
+              <div class="vs">
+                <div class="card-title"
+                  style="margin-bottom:4%; font-size:clamp(.64rem,1vw,.8rem); color:var(--text2); text-transform:uppercase; letter-spacing:1px;">
+                  Tabla: Locations</div>
+                <div class="code">
+                  <span class="cm">-- Actualización en tiempo real</span><br>
+                  driver_id &nbsp; UUID<br>
+                  lat &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DECIMAL<br>
+                  lng &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DECIMAL<br>
+                  heading &nbsp;&nbsp;&nbsp; INTEGER<br>
+                  updated_at &nbsp;TIMESTAMPTZ<br>
+                  <span class="cm">-- TTL: se limpia automáticamente</span><br>
+                  <span class="cm">-- Redis cache para velocidad</span>
+                </div>
+                <div class="card or vs" style="margin-top:4%;">
+                  <div class="card-title" style="color:var(--orange);">Tabla: Ratings</div>
+                  <div class="code" style="margin-top:4%;">
+                    ride_id &nbsp;&nbsp; → rides.id<br>
+                    from_user UUID<br>
+                    to_user &nbsp;&nbsp; UUID<br>
+                    score &nbsp;&nbsp;&nbsp;&nbsp; INTEGER <span class="cm">-- 1-5</span><br>
+                    comment &nbsp;&nbsp; TEXT
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- ══════════════════════════════════════════════
+     S8 · SEGURIDAD Y PRIVACIDAD
+══════════════════════════════════════════════ -->
+      <div class="slide" id="s8">
+        <div class="inner">
+          <div class="hdr">
+            <div class="tag orange">Seguridad y Privacidad</div>
+            <div class="h2">Infraestructura de <span class="o">seguridad</span> del sistema</div>
+          </div>
+          <div class="content">
+            <div class="g4 fill as">
+
+              <div class="card g vs">
+                <div class="card-title"><span class="g">Autenticación</span></div>
+                <ul class="cl">
+                  <li><span class="i">—</span><span><strong>JWT</strong> con expiración + refresh tokens</span></li>
+                  <li><span class="i">—</span><span><strong>bcrypt</strong> para hash de contraseñas</span></li>
+                  <li><span class="i">—</span><span>Secrets en variables de entorno</span></li>
+                  <li><span class="i">—</span><span>Verificación de email al registro</span></li>
+                </ul>
+              </div>
+
+              <div class="card b vs">
+                <div class="card-title"><span class="b">Comunicación</span></div>
+                <ul class="cl">
+                  <li><span class="i">—</span><span><strong>HTTPS obligatorio</strong> en todos los endpoints</span>
+                  </li>
+                  <li><span class="i">—</span><span>WSS (WebSocket seguro) para tiempo real</span></li>
+                  <li><span class="i">—</span><span>Certificados SSL/TLS actualizados</span></li>
+                  <li><span class="i">—</span><span>Rate limiting para prevenir abuso</span></li>
+                </ul>
+              </div>
+
+              <div class="card pu vs">
+                <div class="card-title"><span class="p">Privacidad de Usuarios</span></div>
+                <ul class="cl">
+                  <li><span class="i">—</span><span>Datos personales <strong>nunca expuestos</strong> en la API
+                      municipal</span></li>
+                  <li><span class="i">—</span><span>UUIDs anonimizados en reportes fiscales</span></li>
+                  <li><span class="i">—</span><span>Acceso por roles estrictos</span></li>
+                  <li><span class="i">—</span><span>Política de privacidad explícita</span></li>
+                </ul>
+              </div>
+
+              <div class="card or vs">
+                <div class="card-title" style="color:var(--orange);">Verificación Conductores</div>
+                <ul class="cl">
+                  <li><span class="i">—</span><span>Validación de DNI y licencia de conducir</span></li>
+                  <li><span class="i">—</span><span>Verificación de habilitación municipal</span></li>
+                  <li><span class="i">—</span><span>Revisión técnica del vehículo</span></li>
+                  <li><span class="i">—</span><span>Estado activo/suspendido en tiempo real</span></li>
+                </ul>
+              </div>
+
+              <div class="card vs" style="grid-column:1/-1; flex-direction:row; gap:3%;">
+                <div style="flex:1;">
+                  <div class="card-title" style="margin-bottom:3%;">Botón de Emergencia</div>
+                  <ul class="cl">
+                    <li><span class="i">—</span><span>Disponible en la app del pasajero durante todo el viaje</span>
+                    </li>
+                    <li><span class="i">—</span><span>Envía ubicación GPS en tiempo real al panel de
+                        administración</span></li>
+                    <li><span class="i">—</span><span>Registro del incidente con timestamp y datos del viaje</span></li>
+                  </ul>
+                </div>
+                <div style="flex:1; border-left:1px solid var(--border); padding-left:3%;">
+                  <div class="card-title" style="margin-bottom:3%;">Base de Datos Segura</div>
+                  <ul class="cl">
+                    <li><span class="i">—</span><span>Backups automáticos diarios</span></li>
+                    <li><span class="i">—</span><span>Base de datos replicada (alta disponibilidad)</span></li>
+                    <li><span class="i">—</span><span>Acceso solo desde el backend, nunca directo desde el
+                        cliente</span></li>
+                  </ul>
+                </div>
+                <div style="flex:1; border-left:1px solid var(--border); padding-left:3%;">
+                  <div class="card-title" style="margin-bottom:3%;">Cumplimiento Normativo</div>
+                  <ul class="cl">
+                    <li><span class="i">—</span><span>Arquitectura diseñada desde el origen para cumplir la <strong>Ord.
+                          3425/89</strong></span></li>
+                    <li><span class="i">—</span><span>Auditoría municipal habilitada sin comprometer la
+                        privacidad</span></li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- ══════════════════════════════════════════════
+     S9 · MONETIZACIÓN
+══════════════════════════════════════════════ -->
+      <div class="slide" id="s9">
+        <div class="inner">
+          <div class="hdr">
+            <div class="tag">Modelo de Negocio</div>
+            <div class="h2">Monetización y <span class="g">estructura financiera</span></div>
+          </div>
+          <div class="content">
+            <div class="g21 fill as">
+
+              <div class="vs">
+                <div class="g2" style="gap:clamp(7px,1.5%,14px);">
+                  <div class="stat">
+                    <div class="stat-v g">15%</div>
+                    <div class="stat-l">Comisión por viaje</div>
+                  </div>
+                  <div class="stat">
+                    <div class="stat-v b">~11%</div>
+                    <div class="stat-l">Ingreso neto (post Mercado Pago)</div>
+                  </div>
+                </div>
+
+                <div class="card vs">
+                  <div class="card-title">Fuentes de ingreso</div>
+                  <ul class="cl">
+                    <li><span class="i">—</span><span><strong>Comisión por viaje (15%)</strong> — ingreso principal
+                        desde el primer viaje completado</span></li>
+                    <li><span class="i">—</span><span><strong>Servicios premium para conductores</strong> — visibilidad
+                        prioritaria, estadísticas avanzadas</span></li>
+                    <li><span class="i">—</span><span><strong>Pagos digitales (fase 2)</strong> — integración con
+                        Mercado Pago (~3–5% de comisión del medio de pago)</span></li>
+                    <li><span class="i">—</span><span><strong>Publicidad local (fase 3)</strong> — cuando la base de
+                        usuarios justifique el volumen</span></li>
+                  </ul>
+                </div>
+
+                <div class="card g vs">
+                  <div class="card-title"><span class="g">Costos operativos mensuales</span></div>
+                  <ul class="cl">
+                    <li><span class="i">—</span><span>Infraestructura: <strong>$100–200 USD/mes</strong> en fase
+                        inicial</span></li>
+                    <li><span class="i">—</span><span>Mapbox: <strong>gratuito</strong> hasta 50.000 cargas/mes</span>
+                    </li>
+                    <li><span class="i">—</span><span>Firebase FCM (notificaciones): <strong>gratuito</strong></span>
+                    </li>
+                    <li><span class="i">—</span><span>Supabase: <strong>gratuito</strong> hasta límite generoso, luego
+                        escala</span></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="vs">
+                <div class="card b vs">
+                  <div class="card-title"><span class="b">Flujo por viaje — ejemplo $2.000 ARS</span></div>
+                  <div style="margin-top:4%;">
+                    <div class="cost-row"><span class="cost-label">Monto total del viaje</span><span
+                        class="cost-val">$2.000</span></div>
+                    <div class="cost-row"><span class="cost-label">Conductor recibe (85%)</span><span
+                        class="cost-val g">$1.700</span></div>
+                    <div class="cost-row"><span class="cost-label">Comisión plataforma (15%)</span><span
+                        class="cost-val">$300</span></div>
+                    <div class="cost-row"><span class="cost-label">Canon municipal (automático)</span><span
+                        class="cost-val" style="color:var(--orange);">Según ord.</span></div>
+                    <div class="cost-row total"><span class="cost-label">Ingreso neto plataforma</span><span
+                        class="cost-val">~$220–260</span></div>
+                  </div>
+                </div>
+                <div class="card or vs">
+                  <div class="card-title" style="color:var(--orange);">Consideración importante</div>
+                  <div class="body">Mercado Pago cobra entre <strong>3–5% por transacción</strong> en pagos digitales.
+                    Esto debe contemplarse en el modelo desde el inicio para que la comisión del 15% sea sostenible.
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- ══════════════════════════════════════════════
+     S10 · PLAN DE DESARROLLO
+══════════════════════════════════════════════ -->
+      <div class="slide" id="s10">
+        <div class="inner">
+          <div class="hdr">
+            <div class="tag blue">Plan de Desarrollo</div>
+            <div class="h2">Roadmap <span class="b">6 meses</span> · MVP a lanzamiento</div>
+          </div>
+          <div class="content">
+            <div class="g21 fill as">
+
+              <div class="tl">
+                <div class="tli">
+                  <div class="tl-left">
+                    <div class="tl-dot g">1</div>
+                    <div class="tl-line"></div>
+                  </div>
+                  <div class="tl-body">
+                    <div class="tl-period">Mes 1 — Semanas 1–4</div>
+                    <div class="tl-title">Arquitectura, diseño y base técnica</div>
+                    <div class="tl-desc">Definición del stack, setup del repositorio, diseño UX/UI en Figma, prototipo
+                      interactivo. Configuración de Supabase, estructura de base de datos y autenticación base. Contacto
+                      con municipio para definir protocolo de la API de fiscalización.</div>
+                  </div>
+                </div>
+                <div class="tli">
+                  <div class="tl-left">
+                    <div class="tl-dot b">2</div>
+                    <div class="tl-line"></div>
+                  </div>
+                  <div class="tl-body">
+                    <div class="tl-period b">Mes 2–3 — Core del sistema</div>
+                    <div class="tl-title">Desarrollo de apps y backend</div>
+                    <div class="tl-desc">App del pasajero y app del conductor en React Native. Backend Node.js con todos
+                      los endpoints. Geolocalización en tiempo real con WebSockets. Integración de mapas (Mapbox). API
+                      de fiscalización municipal — los 3 endpoints y el webhook.</div>
+                  </div>
+                </div>
+                <div class="tli">
+                  <div class="tl-left">
+                    <div class="tl-dot g">3</div>
+                    <div class="tl-line"></div>
+                  </div>
+                  <div class="tl-body">
+                    <div class="tl-period">Mes 4 — Integraciones</div>
+                    <div class="tl-title">Panel admin, pagos y notificaciones</div>
+                    <div class="tl-desc">Panel de administración en React.js. Integración con Mercado Pago. Push
+                      notifications vía FCM. Botón de emergencia. Módulo de reportes y estadísticas.</div>
+                  </div>
+                </div>
+                <div class="tli">
+                  <div class="tl-left">
+                    <div class="tl-dot b">4</div>
+                    <div class="tl-line"></div>
+                  </div>
+                  <div class="tl-body">
+                    <div class="tl-period b">Mes 5 — Calidad</div>
+                    <div class="tl-title">Testing, QA y correcciones</div>
+                    <div class="tl-desc">Pruebas internas con conductores reales. Testing de la API municipal con el
+                      equipo del municipio. Corrección de bugs, ajuste de tarifas y flujos. Testing en dispositivos
+                      reales Android e iOS.</div>
+                  </div>
+                </div>
+                <div class="tli">
+                  <div class="tl-left">
+                    <div class="tl-dot g">5</div>
+                  </div>
+                  <div class="tl-body">
+                    <div class="tl-period">Mes 6 — Lanzamiento</div>
+                    <div class="tl-title">Piloto en Comodoro Rivadavia</div>
+                    <div class="tl-desc">Publicación en App Store y Play Store. Onboarding de conductores iniciales.
+                      Campaña de marketing digital local. Monitoreo activo post-lanzamiento y soporte.</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="vs">
+                <div class="card g vs">
+                  <div class="card-title"><span class="g">Herramientas de desarrollo</span></div>
+                  <ul class="cl">
+                    <li><span class="i">—</span><span><strong>GitHub</strong> — control de versiones y
+                        colaboración</span></li>
+                    <li><span class="i">—</span><span><strong>Jira / Notion</strong> — gestión de tareas e hitos</span>
+                    </li>
+                    <li><span class="i">—</span><span><strong>Figma</strong> — diseño UI/UX y prototipado</span></li>
+                    <li><span class="i">—</span><span><strong>Postman</strong> — documentación y testing de API</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="card b vs">
+                  <div class="card-title"><span class="b">Metodología</span></div>
+                  <ul class="cl">
+                    <li><span class="i">—</span><span>Sprints de <strong>2 semanas</strong> con entregables
+                        concretos</span></li>
+                    <li><span class="i">—</span><span>Documentación técnica continua de arquitectura y decisiones</span>
+                    </li>
+                    <li><span class="i">—</span><span>IA como herramienta para acelerar desarrollo (Copilot,
+                        Claude)</span></li>
+                    <li><span class="i">—</span><span>Code review en cada Pull Request</span></li>
+                  </ul>
+                </div>
+                <div class="card vs">
+                  <div class="card-title">Entregables por fase</div>
+                  <ul class="cl">
+                    <li><span class="i">—</span><span>Mes 1: Prototipo Figma + arquitectura documentada</span></li>
+                    <li><span class="i">—</span><span>Mes 3: Backend funcional + API municipal operativa</span></li>
+                    <li><span class="i">—</span><span>Mes 4: Apps completas en entorno de pruebas</span></li>
+                    <li><span class="i">—</span><span>Mes 5: Build aprobado por municipio</span></li>
+                    <li><span class="i">—</span><span>Mes 6: App publicada en stores</span></li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- ══════════════════════════════════════════════
+     S11 · CIERRE
+══════════════════════════════════════════════ -->
+      <div class="slide" id="s11" style="flex-direction:column; justify-content:center; padding:8% 10%;">
+        <div class="bg-grid" style="opacity:.12;"></div>
+        <div class="bg-glow"
+          style="right:-8%; top:-20%; width:60%; height:130%; background:radial-gradient(ellipse, rgba(0,200,150,.07), transparent 65%);">
+        </div>
+        <div class="bg-glow"
+          style="left:-5%; bottom:-20%; width:50%; height:100%; background:radial-gradient(ellipse, rgba(59,130,246,.05), transparent 65%);">
+        </div>
+
+        <div style="position:relative;">
+          <div
+            style="font-size:clamp(.62rem,.9vw,.72rem); letter-spacing:3px; text-transform:uppercase; color:var(--blue); margin-bottom:3%;">
+            Resumen del Proyecto</div>
+
+          <div class="h1"
+            style="font-size:clamp(1.8rem,4.5vw,3.4rem); max-width:70%; margin-bottom:3%; line-height:1.1;">
+            SUBI
+          </div>
+
+
+          <div style="margin-bottom:4%;">
+            <button onclick="window.open('mockup.html','_blank')"
+              style="padding:.65em 1.8em;background:var(--accent);border:none;border-radius:8px;color:#000;font-family:'Syne',sans-serif;font-weight:700;font-size:clamp(.7rem,1.1vw,.88rem);cursor:pointer;letter-spacing:.3px;transition:opacity .15s;"
+              onmouseover="this.style.opacity='.82'" onmouseout="this.style.opacity='1'">Ver Mockup de la App →</button>
+          </div>
+
+          <div class="hs">
+            <span class="pill g">Habilitación municipal</span>
+            <span class="pill g">API de fiscalización Ord. 3425/89</span>
+            <span class="pill b">React Native · Node.js · Supabase</span>
+            <span class="pill b">iOS + Android desde el inicio</span>
+            <span class="pill pu">Panel de administración web</span>
+            <span class="pill n">15% de comisión al conductor</span>
+            <span class="pill n">MVP en 6 meses</span>
+            <span class="pill or">Canon municipal automatizado</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="slides.js"></script>
+</body>
+
+</html>
